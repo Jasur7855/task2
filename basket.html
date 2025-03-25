@@ -26,71 +26,66 @@
             />
           </svg>
         </div>
-        <h2>Каталог</h2>
+        <h2>Мои заказы</h2>
       </div>
     </header>
-    <section class="catalog">
-      <div class="catalogMenu">
-        <div class="menu-item">
-          <div class="title">
-            <h3>Микроволновые печи</h3>
-            <img src="./img/svg/arrRight.svg" alt="" />
-          </div>
-          <div class="submenu" id="microwave">
-            <a href="#">Samsung</a>
-            <a href="#">LG</a>
-            <a href="#">Bosch</a>
-          </div>
+    <div class="main">
+      <div class="noOreder">
+        <img src="./img/svg/noOredderImg.svg" alt="" />
+        <h3>У вас пока нет заказов</h3>
+        <h4>Оформляйте заказы и отслеживайте их здесь</h4>
+      </div>
+      <div class="order">
+        <div class="orderStatusButtons">
+          <button class="status-btn active">Все</button>
+          <button class="status-btn">Новые</button>
+          <button class="status-btn">В процессе</button>
+          <button class="status-btn">Готовые</button>
         </div>
-        <div class="menu-item">
-          <div class="title">
-            <h3>Телефоны и планшеты</h3>
-            <img src="./img/svg/arrRight.svg" alt="" />
+        <div class="orderCards">
+          <div class="card">
+            <img class="orderImg" src="./img/png/orderImg.png" alt="" />
+            <div class="orderDescription">
+              <h3 class="orderDate">Заказ №1245 <span>03.08.2024 г.</span></h3>
+              <h3 class="orderStatus"><span class="blue">Новый</span> I 3 товара</h3>
+              <h3 class="deliveryMethod">Быстрая доставка</h3>
+              <h3 class="orderPrice blue">1 840 000 сум</h3>
+            </div>
+            <img class="orderArr" src="./img/svg/arrBlueRight.svg"></img>
           </div>
-          <div class="submenu" id="phones">
-            <a href="#">iPhone</a>
-            <a href="#">Samsung</a>
-            <a href="#">Xiaomi</a>
+          <div class="card">
+            <img class="orderImg" src="./img/png/orderImg.png" alt="" />
+            <div class="orderDescription">
+              <h3 class="orderDate">Заказ №1245 <span>03.08.2024 г.</span></h3>
+              <h3 class="orderStatus"><span class="orange">Принят</span> I 3 товара</h3>
+              <h3 class="deliveryMethod">Стандартная доставка</h3>
+              <h3 class="orderPrice blue">1 840 000 сум</h3>
+            </div>
+            <img class="orderArr" src="./img/svg/arrBlueRight.svg"></img>
           </div>
-        </div>
-
-        <div class="menu-item">
-          <div class="title">
-            <h3>Газовые плиты</h3>
-            <img src="./img/svg/arrRight.svg" alt="" />
+          <div class="card">
+            <img class="orderImg" src="./img/png/orderImg.png" alt="" />
+            <div class="orderDescription">
+              <h3 class="orderDate">Заказ №1245 <span>03.08.2024 г.</span></h3>
+              <h3 class="orderStatus"><span class="green">Выполнен</span> I 3 товара</h3>
+              <h3 class="deliveryMethod">Бесплатная доставка</h3>
+              <h3 class="orderPrice blue">1 840 000 сум</h3>
+            </div>
+            <img class="orderArr" src="./img/svg/arrBlueRight.svg"></img>
           </div>
-          <div class="submenu" id="stoves">
-            <a href="#">Gefest</a>
-            <a href="#">Bosch</a>
-            <a href="#">Indesit</a>
-          </div>
-        </div>
-
-        <div class="menu-item">
-          <div class="title">
-            <h3>Вытяжки</h3>
-            <img src="./img/svg/arrRight.svg" alt="" />
-          </div>
-          <div class="submenu" id="hoods">
-            <a href="#">Elica</a>
-            <a href="#">Bosch</a>
-            <a href="#">Krona</a>
-          </div>
-        </div>
-
-        <div class="menu-item">
-          <div class="title">
-            <h3>Роутеры</h3>
-            <img src="./img/svg/arrRight.svg" alt="" />
-          </div>
-          <div class="submenu" id="routers">
-            <a href="#">TP-Link</a>
-            <a href="#">Asus</a>
-            <a href="#">MikroTik</a>
+          <div class="card">
+            <img class="orderImg" src="./img/png/orderImg.png" alt="" />
+            <div class="orderDescription">
+              <h3 class="orderDate">Заказ №1245 <span>03.08.2024 г.</span></h3>
+              <h3 class="orderStatus"><span class="error">Отменен</span> I 3 товара</h3>
+              <h3 class="deliveryMethod">Бесплатная доставка</h3>
+              <h3 class="orderPrice blue">1 840 000 сум</h3>
+            </div>
+            <img class="orderArr" src="./img/svg/arrBlueRight.svg"></img>
           </div>
         </div>
       </div>
-    </section>
+    </div>
     <div class="bottom-nav">
       <a href="./index.html" class="nav-item">
         <svg
@@ -108,7 +103,7 @@
 
         <div>Главный</div>
       </a>
-      <a href="./catalog.html" class="nav-item active">
+      <a href="./catalog.html" class="nav-item">
         <svg
           width="21"
           height="24"
@@ -130,7 +125,7 @@
 
         <div>Каталог</div>
       </a>
-      <a href="./basket.html" class="nav-item">
+      <a href="./basket.html" class="nav-item active">
         <svg
           width="21"
           height="22"
@@ -146,7 +141,7 @@
           />
         </svg>
 
-        <div>Корзина</div>
+        <div class="active">Корзина</div>
       </a>
       <div class="nav-item">
         <svg
@@ -167,19 +162,6 @@
         <div>Профиль</div>
       </div>
     </div>
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        document.querySelectorAll(".menu-item").forEach((item) => {
-          item.addEventListener("click", function () {
-            const submenu = this.querySelector(".submenu");
-            const title = this.querySelector(".title img");
-            if (submenu) {
-              submenu.classList.toggle("active");
-              title.classList.toggle("active");
-            }
-          });
-        });
-      });
-    </script>
+    <script src="./main.js" type="module"></script>
   </body>
 </html>
