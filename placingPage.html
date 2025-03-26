@@ -10,7 +10,7 @@
   <body>
     <header>
       <div class="header-top">
-        <div class="arr">
+        <a href="./basket.html" class="arr">
           <svg
             width="13"
             height="22"
@@ -25,7 +25,7 @@
               fill="#9DA0A3"
             />
           </svg>
-        </div>
+        </a>
         <h2>Оформление заказа</h2>
         <div class="arr"></div>
       </div>
@@ -34,29 +34,76 @@
       <form action="">
         <div class="bg-greey">
           Получатель:
-          <input type="text" placeholder="Имя" />
-          <input type="text" placeholder="Фамилия" />
-          <input type="number" id="phone" placeholder="+998" maxlength="18" />
+          <input type="text" placeholder="Имя" required />
+          <input type="text" placeholder="Фамилия" required />
+          <input
+            type="number"
+            id="phone"
+            placeholder="+998"
+            maxlength="18"
+            required
+          />
         </div>
         <div class="location bg-greey">
           Адрес доставки:
-          <button>
+          <div id="deliveryAdressWrapper"></div>
+          <button id="placingLocationBtn" type="button">
             <img src="./img/svg/orderDetailLocation.svg" alt="" />Добавить адрес
           </button>
         </div>
         <div class="delivery bg-greey">
           Способ доставки:
-          <label><input type="radio" name="deliveryType"/><span class="custom-radio"></span>Доставка Яндекс</label>
-          <label><input type="radio" name="deliveryType"/><span class="custom-radio"></span>Доставка курьером</label>
-          <label><input type="radio" name="deliveryType"/><span class="custom-radio"></span>Самовывоз</label>
+          <label
+            ><input type="radio" required name="deliveryType" required /><span
+              class="custom-radio"
+            ></span
+            >Доставка Яндекс</label
+          >
+          <label
+            ><input type="radio" name="deliveryType" required /><span
+              class="custom-radio"
+            ></span
+            >Доставка курьером</label
+          >
+          <label
+            ><input type="radio" name="deliveryType" required /><span
+              class="custom-radio"
+            ></span
+            >Самовывоз</label
+          >
         </div>
         <div class="payment bg-greey">
-          Способ доставки:
-          <label><input type="radio" name="paymentType"/><span class="custom-radio"></span>Наличные </label>
-          <label><input type="radio" name="paymentType"/><span class="custom-radio"></span>Терминал Uzcard</label>
-          <label><input type="radio" name="paymentType"/><span class="custom-radio"></span>Безналичные</label>
-          <label><input type="radio" name="paymentType"/><span class="custom-radio"></span>Терминал Humo</label>
-          <label><input type="radio" name="paymentType"/><span class="custom-radio"></span>VISA</label>
+          Способ оплаты:
+          <label
+            ><input type="radio" name="paymentType" required /><span
+              class="custom-radio"
+            ></span
+            >Наличные
+          </label>
+          <label
+            ><input type="radio" name="paymentType" required /><span
+              class="custom-radio"
+            ></span
+            >Терминал Uzcard</label
+          >
+          <label
+            ><input type="radio" name="paymentType" required /><span
+              class="custom-radio"
+            ></span
+            >Безналичные</label
+          >
+          <label
+            ><input type="radio" name="paymentType" required /><span
+              class="custom-radio"
+            ></span
+            >Терминал Humo</label
+          >
+          <label
+            ><input type="radio" name="paymentType" required /><span
+              class="custom-radio"
+            ></span
+            >VISA</label
+          >
         </div>
         <div class="basketCardWrapper">
           <div class="basketCard">
@@ -65,14 +112,13 @@
               <h4>Пылесос Samsung Waterproof SM-250 серый</h4>
               <div class="basketDescPrice">
                 <div class="countBtns">
-                  <button id="basketPlus"></button>
+                  <button type="button" id="basketPlus"></button>
                   <span class="count">1</span>
-                  <button id="basketMinus"></button>
+                  <button type="button" id="basketMinus"></button>
                 </div>
                 <div class="price">1 840 000 сум</div>
               </div>
             </div>
-            
           </div>
         </div>
         <div class="placingAnOrderWrapper">
@@ -90,9 +136,75 @@
               <span class="answer" id="deliveryType">Бесплатно</span>
             </li>
           </ul>
-          <a href="./placingPage.html">Оформить заказ</a>
+          <button>Оформить заказ</button>
         </div>
       </form>
+      <div class="deliverAddressWrapper">
+        <div id="deliverAddressForm">
+          <div class="blueline"></div>
+          <h4>Добавить адрес</h4>
+          <div class="selectWrapper">
+            <select id="city" name="city" required>
+              <option value="" disabled selected>Выберите страну</option>
+              <option value="Узбекистан">Узбекистан</option>
+              <option value="Россия">Россия</option>
+              <option value="Америка">Америка</option>
+              <option value="Лондон">Лондон</option>
+              <option value="Китай">Китай</option>
+              <option value="Казахстан">Казахстан</option>
+              <option value="Украина">Украина</option>
+            </select>
+            <select id="region" name="region" required>
+              <option value="" disabled selected>Выберите регион</option>
+              <option value="Ташкент">Ташкент</option>
+              <option value="Ташкентская область">Ташкентская область</option>
+              <option value="Андижанская область">Андижанская область</option>
+              <option value="Бухарская область">Бухарская область</option>
+              <option value="Ферганская област">Ферганская область</option>
+              <option value="Джизакская область">Джизакская область</option>
+              <option value="Наманганская область">Наманганская область</option>
+              <option value="Навоийская область">Навоийская область</option>
+              <option value="Кашкадарьинская область">
+                Кашкадарьинская область
+              </option>
+              <option value="Самаркандская область">
+                Самаркандская область
+              </option>
+              <option value="Сырдарьинская область">
+                Сырдарьинская область
+              </option>
+              <option value="Сурхандарьинская область">
+                Сурхандарьинская область
+              </option>
+              <option value="Хорезмская область">Хорезмская область</option>
+              <option value="Республика Каракалпакстан">
+                Республика Каракалпакстан
+              </option>
+            </select>
+
+            <textarea
+              id="address"
+              cols="30"
+              rows="4"
+              placeholder="Введите адрес"
+              required
+            ></textarea>
+            <label class="custom-checkbox">
+              <input type="checkbox" />
+              <span class="checkmark"></span>
+              Использовать адрес по умолчанию
+            </label>
+            <button disabled>Сохранить</button>
+          </div>
+        </div>
+      </div>
+      <div class="deliveryPopUp">
+        <div>
+          <img src="./img/svg/cellIcon.svg" alt="" />
+          <h4>Адрес успешно добавлен</h4>
+          <button>Продолжить</button>
+        </div>
+      </div>
     </div>
     <div class="bottom-nav">
       <a href="./index.html" class="nav-item">

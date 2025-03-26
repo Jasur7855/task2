@@ -496,7 +496,7 @@ header h2 {
   justify-content: center;
   align-items: center;
   background-color: #ffffff40;
-  z-index: 10;
+  z-index: 100;
 }
 
 .productPopUp div {
@@ -827,7 +827,8 @@ header h2 {
 .placingAnOrderInfo li:first-child span {
   font-weight: 600;
 }
-.placingAnOrderWrapper a {
+.placingAnOrderWrapper a,
+.placingAnOrderWrapper button {
   background-color: #0077ff;
   font-weight: 600;
   border: none;
@@ -889,7 +890,6 @@ header h2 {
   gap: 8px;
 }
 
-/* Скрываем стандартное радио */
 .placingMain div label input[type="radio"] {
   appearance: none;
   position: absolute;
@@ -898,7 +898,6 @@ header h2 {
   opacity: 0;
 }
 
-/* Кастомный кружок */
 .placingMain div label .custom-radio {
   width: 20px;
   height: 20px;
@@ -910,7 +909,6 @@ header h2 {
   transition: border-color 0.3s, background-color 0.3s;
 }
 
-/* Внутренний кружок (появляется при checked) */
 .placingMain div label .custom-radio::before {
   content: "";
   width: 10px;
@@ -924,7 +922,6 @@ header h2 {
   transition: transform 0.2s ease-in-out;
 }
 
-/* Стили при выборе */
 .placingMain div label input[type="radio"]:checked + .custom-radio {
   border-color: #0077ff;
 }
@@ -932,7 +929,156 @@ header h2 {
 .placingMain div label input[type="radio"]:checked + .custom-radio::before {
   transform: translate(-50%, -50%) scale(1);
 }
-  
+.deliverAddressWrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(157, 160, 163, 0.3);
+  z-index: 10;
+  display: flex;
+  align-items: flex-end;
+  opacity: 0;
+  visibility: hidden;
+}
+.deliverAddressWrapper.active {
+  opacity: 1;
+  visibility: visible;
+}
+.deliverAddressWrapper #deliverAddressForm {
+  transform: translateY(100%);
+  transition: transform 0.4s ease-in-out;
+}
+
+.deliverAddressWrapper.active #deliverAddressForm {
+  padding: 8px calc(3.2vw - 0.38px) 32px;
+  background-color: #141414;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 12px 12px 0 0;
+  transform: translateY(0);
+}
+#deliverAddressForm .blueline {
+  width: calc(12.7vw - 1.5px);
+  height: 5px;
+  background-color: #0077ff;
+  margin: 0 auto 36px;
+  border-radius: 4px;
+}
+#deliverAddressForm h4 {
+  font-size: 17px;
+  font-weight: 600;
+  margin-bottom: 24px;
+}
+
+#deliverAddressForm .selectWrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+#deliverAddressForm .selectWrapper select {
+  background-color: #272829;
+  width: 100%;
+  padding: 16px 12px;
+  appearance: none;
+  color: #9da0a3;
+  border: 1px solid #4f5052;
+  border-radius: 8px;
+  outline: none;
+}
+
+/* Стили для option */
+#deliverAddressForm .selectWrapper select option {
+  color: #9da0a3;
+  font-size: 17px;
+}
+
+/* Стили для textarea */
+.selectWrapper textarea {
+  background-color: #272829;
+  border-radius: 8px;
+  outline: none;
+  padding: 16px 12px;
+  font-size: 17px;
+}
+
+/* Стили для кнопки */
+.selectWrapper button {
+  background-color: #0077ff;
+  border: none;
+  padding: 16px;
+  border-radius: 8px;
+  font-size: 17px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.selectWrapper button:hover {
+  background-color: #0077ff;
+}
+.selectWrapper button:disabled {
+  background-color: #8db1e2;
+}
+
+.selectWrapper .custom-checkbox {
+  margin-bottom: 10px;
+}
+#deliveryAdressWrapper {
+  margin-bottom: 10px;
+}
+
+.deliveryPopUp {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffffff40;
+  z-index: 100;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+}
+.deliveryPopUp.active {
+  opacity: 1;
+  visibility: visible;
+}
+.deliveryPopUp div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px 0;
+  background-color: #272829;
+  width: 100%;
+  max-width: 350px;
+  margin: 0 16px;
+  padding: 32px 16px 16px;
+  border-radius: 12px;
+}
+.deliveryPopUp div h4 {
+  font-size: 16px;
+  font-weight: 600;
+}
+.deliveryPopUp div button {
+  width: 100%;
+  background-color: #007bff;
+  color: #fff;
+  padding: 16px 0;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  border: none;
+}
+
 @media (min-width: 768px) {
   .productCard #productSlider {
     height: 400px;
