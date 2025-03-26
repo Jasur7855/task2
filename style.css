@@ -7,22 +7,23 @@
   color: #fff;
   text-decoration: none;
 }
-.blue {
+.orderStatus .new {
   color: #0077ff;
 }
-.orange {
+.orderStatus .accepted {
   color: #ff8800;
 }
-.green {
+.orderStatus .completed {
   color: #00cc52;
 }
-.error {
+.orderStatus .cancel {
   color: #ff4400;
 }
 body {
   max-width: 768px;
-  margin: 0 auto 106px;
+  margin: 0 auto 90px;
   background-color: #141414;
+  min-height: 100vh;
 }
 .bottom-nav {
   position: fixed;
@@ -261,6 +262,26 @@ header h2 {
   background-color: #272829;
   border-radius: 8px;
   padding: calc(2.1vw - 0.25px);
+  position: relative;
+}
+.goodsCards .card .badge {
+  position: absolute;
+  left: calc(2.1vw - 0.25px);
+  padding: 6px 8px;
+  color: white;
+  top: calc(5.3vw - 0.63px);
+  z-index: 1;
+  font-size: 12px;
+  text-transform: uppercase;
+}
+.goodsCards .card .badge.top {
+  background-color: #007bff;
+}
+.goodsCards .card .badge.new {
+  background-color: #00cc52;
+}
+.goodsCards .card .badge.sale {
+  background-color: #ff4400;
 }
 .goodsCards .card img {
   width: 100%;
@@ -583,6 +604,335 @@ header h2 {
 .order .orderCards .card .orderDescription .orderPrice {
   font-weight: 600;
 }
+.mainOrderDetail {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 16px;
+}
+.mainOrderDetail .status {
+  width: 75px;
+  margin-bottom: 20px;
+}
+.mainOrderDetail p {
+  text-align: center;
+  margin-bottom: 32px;
+}
+.mainOrderDetail p .blue {
+  color: #007bff;
+}
+.mainOrderDetail ul {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 42px;
+}
+.mainOrderDetail ul li {
+  background-color: #272829;
+  padding: 16px calc(3.2vw - 0.4px);
+  list-style: none;
+  border-radius: 8px;
+}
+.mainOrderDetail ul li .desc {
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+.mainOrderDetail ul li .info {
+  display: flex;
+  align-items: center;
+  column-gap: 8px;
+}
+.mainOrderDetail ul li .info p {
+  text-align: left;
+  margin-bottom: 0;
+  line-height: 18px;
+}
+
+.orderGoods .product {
+  display: flex;
+  column-gap: 32px;
+  align-items: center;
+}
+.orderGoods .product {
+  margin-bottom: 12px;
+  padding-bottom: 12px;
+  border-bottom: 1px dashed #9da0a3;
+}
+.orderGoods .product:last-child {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  border-bottom: none;
+}
+.orderGoods .product .productDesc {
+  display: flex;
+  column-gap: 10px;
+}
+.orderGoods .product .productDesc h4 {
+  font-weight: 400;
+}
+.orderGoods .product .productDetail {
+  min-width: 86px;
+  text-align: right;
+}
+.orderGoods .product .productDetail .price {
+  color: #0077ff;
+}
+
+.orderTotal {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.orderTotal div {
+  display: flex;
+  justify-content: space-between;
+}
+.orderDesc {
+  font-weight: 400;
+}
+.orderTotal div .orderDesc.bold {
+  font-weight: 600;
+}
+.blue {
+  color: #0077ff;
+  font-weight: 600;
+}
+.mainOrderDetail .btns {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+.mainOrderDetail .btns a {
+  width: 49%;
+  background-color: #36393d;
+  text-align: center;
+  cursor: pointer;
+  padding: 16px;
+  border-radius: 8px;
+}
+.mainOrderDetail .btns a:first-child {
+  background-color: #0077ff;
+}
+.mainOrderDetail .btns button {
+  width: 100%;
+  margin: 0 auto;
+  max-width: 560px;
+  background-color: #0077ff;
+  padding: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  border-radius: 8px;
+}
+
+.basketMain {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 90px;
+  padding: 0 calc(3.2vw - 0.4px);
+}
+.basketCardWrapper {
+  background-color: #272829;
+  padding: calc(2.6vw - 3.2px);
+  border-radius: 8px;
+}
+.basketCardWrapper .basketCard {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: calc(3.2vw - 0.38px);
+  padding-top: calc(3.2vw - 0.38px);
+  border-top: 1px dashed #9da0a3;
+}
+.basketCardWrapper .basketCard:first-child {
+  margin-top: 0;
+  padding-top: 0;
+  border-top: 0;
+}
+#basketProductImg {
+  width: calc(19.8vw - 2.4px);
+  height: calc(19.8vw - 2.4px);
+  max-width: 150px;
+  max-height: 150px;
+}
+.basketCard .basketDesc {
+  flex-grow: 100;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.basketCard .basketDesc h4 {
+  font-size: calc(3.7vw - 0.44px);
+  font-weight: 400;
+}
+.basketDescPrice {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.basketDescPrice .price {
+  font-size: calc(3.7vw - 0.44px);
+}
+.countBtns {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.countBtns .count {
+  font-size: calc(3.7vw - 0.44px);
+}
+.countBtns button {
+  width: calc(2.6vw + 9.68px);
+  max-width: 30px;
+  height: calc(2.6vw + 9.68px);
+  max-height: 30px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border: none;
+  background-image: url(./img/svg/Plus.svg);
+  border-radius: 50%;
+  font-size: 20px;
+  cursor: pointer;
+}
+.countBtns button:first-child {
+  background-image: url(./img/svg/Minus.svg);
+}
+#basketProductDelete {
+  display: flex;
+  align-items: flex-end;
+}
+#basketProductDelete img {
+  cursor: pointer;
+}
+.placingAnOrderWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+.placingAnOrderInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  background-color: #272829;
+  padding: calc(2.6vw - 3.2px);
+  border-radius: 8px;
+}
+.placingAnOrderInfo li {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+}
+.placingAnOrderInfo li:first-child span {
+  font-weight: 600;
+}
+.placingAnOrderWrapper a {
+  background-color: #0077ff;
+  font-weight: 600;
+  border: none;
+  padding: 16px;
+  border-radius: 8px;
+  text-align: center;
+}
+.placingMain {
+  padding: 0 calc(3.2vw - 0.4px);
+}
+.placingMain form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.placingMain form div:not(.basketCard):not(.basketDesc *) {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.placingMain form div input {
+  background-color: transparent;
+  border: 1px solid #4f5052;
+  display: block;
+  width: 100%;
+  padding: 16px 12px;
+  font-size: 17px;
+  border-radius: 8px;
+}
+.placingMain form div input:focus {
+  outline: 2px solid #0077ff;
+}
+.bg-greey {
+  background-color: #272829;
+  padding: calc(3.2vw - 0.38px);
+  border-radius: 8px;
+}
+.placingMain .location button {
+  background-color: transparent;
+  border: none;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #0077ff;
+}
+.placingMain .delivery label,
+.placingMain .payment label {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+.placingMain div label input {
+  width: auto;
+}
+.placingMain div label {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  gap: 8px;
+}
+
+/* Скрываем стандартное радио */
+.placingMain div label input[type="radio"] {
+  appearance: none;
+  position: absolute;
+  width: 0;
+  height: 0;
+  opacity: 0;
+}
+
+/* Кастомный кружок */
+.placingMain div label .custom-radio {
+  width: 20px;
+  height: 20px;
+  border: 2px solid #4f5052;
+  border-radius: 50%;
+  background-color: transparent;
+  display: inline-block;
+  position: relative;
+  transition: border-color 0.3s, background-color 0.3s;
+}
+
+/* Внутренний кружок (появляется при checked) */
+.placingMain div label .custom-radio::before {
+  content: "";
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #0077ff;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  transition: transform 0.2s ease-in-out;
+}
+
+/* Стили при выборе */
+.placingMain div label input[type="radio"]:checked + .custom-radio {
+  border-color: #0077ff;
+}
+
+.placingMain div label input[type="radio"]:checked + .custom-radio::before {
+  transform: translate(-50%, -50%) scale(1);
+}
+  
 @media (min-width: 768px) {
   .productCard #productSlider {
     height: 400px;
@@ -598,7 +948,10 @@ header h2 {
   .productDescription span,
   .infoWrapper p,
   .characterText ul li span,
-  .showAll span {
+  .showAll span,
+  .basketCard .basketDesc h4,
+  .basketDescPrice .price,
+  .basketDescPrice .countBtns .count {
     font-size: 28px;
   }
   .infoBtns button {

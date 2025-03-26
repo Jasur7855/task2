@@ -9,6 +9,7 @@ const confirmProductBtn = document.querySelector(".productPopUp button");
 const productPopUp = document.querySelector(".productPopUp");
 const productPopUpTitle = document.querySelector(".productPopUp div h4");
 const orderBtns = document.querySelector(".orderStatusButtons");
+const orderCards = document.querySelector(".orderCards");
 // Offer status check
 const offerStatus = localStorage.getItem("hidden") === "true";
 if (offerStatus && offerModal) {
@@ -95,36 +96,60 @@ function confirmCart() {
   updateCartButton(isInCart);
 }
 
-function orderBtnActive(event) {
-  const target = event.target;
-  const orderCards = document.querySelector(".orderCards");
-  const statusBtns = document.querySelectorAll(".status-btn"); // Используем querySelectorAll
-
-  // Убираем класс 'active' у всех кнопок
-  statusBtns.forEach((btn) => btn.classList.remove("active"));
-
-  console.log("Клик по кнопке:", target);
-  console.log("orderData:", orderData);
-
-  // Проверяем, существует ли orderData и является ли он массивом
-  if (!Array.isArray(orderData)) {
-    console.error("❌ orderData не является массивом:", orderData);
+function renderOrderCards(array) {
+  if (!orderCards) {
+    console.error(" Элемент .orderCards не найден");
+    return;
+  }
+  if (!Array.isArray(array)) {
+    console.error(" Переданный аргумент не массив:", array);
     return;
   }
 
-  target.classList.add("active");
+  orderCards.innerHTML = array;
+  orderCards.innerHTML = array
+    .map(
+      (elem, index) => `
+    <a href="orderDetails.html?id=${index}" class="card">
+      <img class="orderImg" src="${elem.img}" alt="" />
+      <div class="orderDescription">
+        <h3 class="orderDate">Заказ №1245 <span>03.08.2024 г.</span></h3>
+        <h3 class="orderStatus"><span class="${elem.status}">${elem.orderStatus}</span> I 3 товара</h3>
+        <h3 class="deliveryMethod">${elem.deliveryMethod}</h3>
+        <h3 class="orderPrice blue">${elem.orderPrice} сум</h3>
+      </div>
+      <img class="orderArr" src="./img/svg/arrBlueRight.svg">
+    </a>`
+    )
+    .join("");
 }
 
-function orderFilter(btnText) {
-  if (target.textContent.trim() === btnText) {
-    const data = orderData.filter((elem) => elem.orderStatus === btnText);
-    if (orderCards) {
-      orderCards.innerHTML = data
-        .map(
-          (order) =>
-            `<div class="orderCard">${order.id} - ${order.orderStatus}</div>`
-        )
-        .join("");
-    }
+if (orderCards && Array.isArray(orderData)) {
+  renderOrderCards(orderData);
+}
+function orderBtnActive(event) {
+  const target = event.target;
+  const statusBtns = document.querySelectorAll(".status-btn"); // Используем querySelectorAll
+  statusBtns.forEach((btn) => btn.classList.remove("active"));
+  if (!Array.isArray(orderData)) {
+    console.error("orderData не является массивом:", orderData);
+    return;
+  }
+  target.classList.add("active");
+  switch (target.innerHTML) {
+    case "Новые":
+      return renderOrderCards(orderData.filter((elem) => elem.status == "new"));
+    case "В процессе":
+      return renderOrderCards(
+        orderData.filter((elem) => elem.status == "accepted")
+      );
+    case "Готовые":
+      return renderOrderCards(
+        orderData.filter((elem) => elem.status == "completed")
+      );
+
+    default:
+      renderOrderCards(orderData);
   }
 }
+

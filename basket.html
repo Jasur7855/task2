@@ -26,64 +26,80 @@
             />
           </svg>
         </div>
-        <h2>Мои заказы</h2>
+        <h2>Корзина</h2>
+        <div class="arr"></div>
       </div>
     </header>
-    <div class="main">
-      <div class="noOreder">
-        <img src="./img/svg/noOredderImg.svg" alt="" />
-        <h3>У вас пока нет заказов</h3>
-        <h4>Оформляйте заказы и отслеживайте их здесь</h4>
+    <div class="basketMain">
+      <div class="basketCardWrapper">
+        <div class="basketCard">
+          <img src="./img/png/orderImg.png" alt="" id="basketProductImg" />
+          <div class="basketDesc">
+            <h4>Пылесос Samsung Waterproof SM-250 серый</h4>
+            <div class="basketDescPrice">
+              <div class="countBtns">
+                <button id="basketPlus"></button>
+                <span class="count">1</span>
+                <button id="basketMinus"></button>
+              </div>
+              <div class="price">1 840 000 сум</div>
+            </div>
+          </div>
+          <div id="basketProductDelete">
+            <img src="./img/svg/delete.svg" alt="" />
+          </div>
+        </div>
+        <div class="basketCard">
+          <img src="./img/png/orderImg.png" alt="" id="basketProductImg" />
+          <div class="basketDesc">
+            <h4>Пылесос Samsung Waterproof SM-250 серый</h4>
+            <div class="basketDescPrice">
+              <div class="countBtns">
+                <button id="basketPlus"></button>
+                <span class="count">1</span>
+                <button id="basketMinus"></button>
+              </div>
+              <div class="price">1 840 000 сум</div>
+            </div>
+          </div>
+          <div id="basketProductDelete">
+            <img src="./img/svg/delete.svg" alt="" />
+          </div>
+        </div>
+        <div class="basketCard">
+          <img src="./img/png/orderImg.png" alt="" id="basketProductImg" />
+          <div class="basketDesc">
+            <h4>Пылесос Samsung Waterproof SM-250 серый</h4>
+            <div class="basketDescPrice">
+              <div class="countBtns">
+                <button id="basketPlus"></button>
+                <span class="count">1</span>
+                <button id="basketMinus"></button>
+              </div>
+              <div class="price">1 840 000 сум</div>
+            </div>
+          </div>
+          <div id="basketProductDelete">
+            <img src="./img/svg/delete.svg" alt="" />
+          </div>
+        </div>
       </div>
-      <div class="order">
-        <div class="orderStatusButtons">
-          <button class="status-btn active">Все</button>
-          <button class="status-btn">Новые</button>
-          <button class="status-btn">В процессе</button>
-          <button class="status-btn">Готовые</button>
-        </div>
-        <div class="orderCards">
-          <div class="card">
-            <img class="orderImg" src="./img/png/orderImg.png" alt="" />
-            <div class="orderDescription">
-              <h3 class="orderDate">Заказ №1245 <span>03.08.2024 г.</span></h3>
-              <h3 class="orderStatus"><span class="blue">Новый</span> I 3 товара</h3>
-              <h3 class="deliveryMethod">Быстрая доставка</h3>
-              <h3 class="orderPrice blue">1 840 000 сум</h3>
-            </div>
-            <img class="orderArr" src="./img/svg/arrBlueRight.svg"></img>
-          </div>
-          <div class="card">
-            <img class="orderImg" src="./img/png/orderImg.png" alt="" />
-            <div class="orderDescription">
-              <h3 class="orderDate">Заказ №1245 <span>03.08.2024 г.</span></h3>
-              <h3 class="orderStatus"><span class="orange">Принят</span> I 3 товара</h3>
-              <h3 class="deliveryMethod">Стандартная доставка</h3>
-              <h3 class="orderPrice blue">1 840 000 сум</h3>
-            </div>
-            <img class="orderArr" src="./img/svg/arrBlueRight.svg"></img>
-          </div>
-          <div class="card">
-            <img class="orderImg" src="./img/png/orderImg.png" alt="" />
-            <div class="orderDescription">
-              <h3 class="orderDate">Заказ №1245 <span>03.08.2024 г.</span></h3>
-              <h3 class="orderStatus"><span class="green">Выполнен</span> I 3 товара</h3>
-              <h3 class="deliveryMethod">Бесплатная доставка</h3>
-              <h3 class="orderPrice blue">1 840 000 сум</h3>
-            </div>
-            <img class="orderArr" src="./img/svg/arrBlueRight.svg"></img>
-          </div>
-          <div class="card">
-            <img class="orderImg" src="./img/png/orderImg.png" alt="" />
-            <div class="orderDescription">
-              <h3 class="orderDate">Заказ №1245 <span>03.08.2024 г.</span></h3>
-              <h3 class="orderStatus"><span class="error">Отменен</span> I 3 товара</h3>
-              <h3 class="deliveryMethod">Бесплатная доставка</h3>
-              <h3 class="orderPrice blue">1 840 000 сум</h3>
-            </div>
-            <img class="orderArr" src="./img/svg/arrBlueRight.svg"></img>
-          </div>
-        </div>
+      <div class="placingAnOrderWrapper">
+        <ul class="placingAnOrderInfo">
+          <li>
+            <span class="orderDesc bold">Итого:</span>
+            <span class="answer blue">1 840 000 сум</span>
+          </li>
+          <li>
+            <span class="orderDesc">2 товара</span>
+            <span class="answer">1 840 000 сум</span>
+          </li>
+          <li>
+            <span class="orderDesc">Доставка</span>
+            <span class="answer" id="deliveryType">Бесплатно</span>
+          </li>
+        </ul>
+        <a href="./placingPage.html">Оформить заказ</a>
       </div>
     </div>
     <div class="bottom-nav">
@@ -143,7 +159,7 @@
 
         <div class="active">Корзина</div>
       </a>
-      <div class="nav-item">
+      <a href="./order.html" class="nav-item">
         <svg
           width="25"
           height="24"
@@ -159,8 +175,8 @@
           />
         </svg>
 
-        <div>Профиль</div>
-      </div>
+        <div>Заказы</div>
+      </a>
     </div>
     <script src="./main.js" type="module"></script>
   </body>

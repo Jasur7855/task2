@@ -3,7 +3,6 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./splide-4.1.3/dist/css/splide.min.css" />
     <link rel="stylesheet" href="/fonts/fonts.css" />
     <link rel="stylesheet" href="./style.css" />
     <title>Document</title>
@@ -11,7 +10,7 @@
   <body>
     <header>
       <div class="header-top">
-        <a href="./index.html" class="arr">
+        <a href="./order.html " class="arr">
           <svg
             width="13"
             height="22"
@@ -27,80 +26,84 @@
             />
           </svg>
         </a>
-        <h2>Бытовая техника</h2>
+        <h2>Мои заказы</h2>
+        <div class="arr"></div>
       </div>
     </header>
-    <div class="productCard">
-      <div class="splide" id="productSlider">
-        <div class="splide__track">
-          <ul class="splide__list">
-            <li class="splide__slide">
-              <img src="./img/png/microwave.png" alt="Slide 1" />
-            </li>
-            <li class="splide__slide">
-              <img src="./img/png/microwave.png" alt="Slide 2" />
-            </li>
-            <li class="splide__slide">
-              <img src="./img/png/microwave.png" alt="Slide 3" />
-            </li>
-          </ul>
-        </div>
-      </div>
-      <div class="productDescription">
-        <h3>Микроволновая печь соло Gorenje MO17E1BH (цвет серый)</h3>
-        <span>Артикул: 21230498</span>
-        <div class="blue">3 000 000 сум <small>6 000 000 сум</small></div>
-      </div>
-      <div class="productInfo">
-        <div class="infoWrapper">
-          <div class="infoBtns">
-            <button class="descBtn active">Описание</button>
-            <button class="charactBtn">Характеристики</button>
+
+    <div class="mainOrderDetail">
+      <img class="status" id="statusIMG" alt="" />
+      <p>
+        Ваш заказ <span class="blue" id="orderNumber"></span> успешно
+        оформлен!<br />
+        Продавец свяжется с вами в скором времени
+      </p>
+      <ul>
+        <li>
+          <h3 class="desc">Получатель:</h3>
+          <div class="info">
+            <img
+              src="./img/svg/orderDetailUser.svg"
+              alt="customer user contact"
+            />
+            <p>Иван Иванович, +99890 9321234</p>
           </div>
-          <div class="descriptionText">
+        </li>
+        <li>
+          <h3 class="desc">Адрес доставки:</h3>
+          <div class="info">
+            <img
+              src="./img/svg/orderDetailLocation.svg"
+              alt="customer user contact"
+            />
             <p>
-              Haier HMB-MM207SA – стильная микроволновая печь формата соло с
-              камерой объёмом 20 л. Благодаря ей разогрев еды и размораживание
-              полуфабрикатов будет минутным делом. ЛЕГКО РАЗОБРАТЬСЯ Модель
-              оснащена удобной механической панелью управления ...
+              ул. Т. Шевченко, М. Улугбекский р-н <br />
+              г. Ташкент
             </p>
-            <div class="showAll" id="toggleList">
-              <span> Читать далее</span>
-              <img src="./img/svg/arrDown.svg" alt="" />
+          </div>
+        </li>
+        <li class="orderGoods">
+          <div class="product">
+            <div class="productDesc">
+              <img src="./img/png/orderImg.png" alt="" />
+              <h4>Пылесос Samsung Waterproof SM-250 серый</h4>
+            </div>
+            <div class="productDetail">
+              <h4 class="price blue">920 000 сум</h4>
+              <div class="count">1 шт</div>
             </div>
           </div>
-          <div class="characterText">
-            <ul>
-              <li class="char">
-                <span>Код товара</span>
-                <span>MGN93RU/A </span>
-              </li>
-              <li class="char">
-                <span>Производитель</span>
-                <span>Apple</span>
-              </li>
-              <li class="char">
-                <span>Разрешение экрана </span>
-                <span>2560x1600</span>
-              </li>
-              <li class="char">
-                <span>Количество ядер процессора</span>
-                <span>8</span>
-              </li>
-            </ul>
-            <div class="showAll" id="toggleList">
-              <span> Показать все</span>
-              <img src="./img/svg/arrDown.svg" alt="" />
+          <div class="product">
+            <div class="productDesc">
+              <img src="./img/png/orderImg.png" alt="" />
+              <h4>Пылесос Samsung Waterproof SM-250 серый</h4>
+            </div>
+            <div class="productDetail">
+              <h4 class="price blue">920 000 сум</h4>
+              <div class="count">1 шт</div>
             </div>
           </div>
-        </div>
-      </div>
-      <div class="cardBtns">
-        <a id="addToCart">В корзину</a>
-        <a href="#">Купить</a>
+        </li>
+        <li class="orderTotal">
+          <div>
+            <span class="orderDesc bold">Итого:</span>
+            <span class="answer blue">1 840 000 сум</span>
+          </div>
+          <div>
+            <span class="orderDesc">2 товара</span>
+            <span class="answer">1 840 000 сум</span>
+          </div>
+          <div>
+            <span class="orderDesc">Доставка</span>
+            <span class="answer" id="deliveryType">Бесплатно</span>
+          </div>
+        </li>
+      </ul>
+      <div class="btns">
+        <a href="./catalog.html">В каталог</a>
+        <a href="./basket.html">Мои заказы</a>
       </div>
     </div>
-
     <div class="bottom-nav">
       <a href="./index.html" class="nav-item">
         <svg
@@ -118,7 +121,7 @@
 
         <div>Главный</div>
       </a>
-      <a href="./catalog.html" class="nav-item active">
+      <a href="./catalog.html" class="nav-item">
         <svg
           width="21"
           height="24"
@@ -140,7 +143,7 @@
 
         <div>Каталог</div>
       </a>
-      <a href="./basket.html" class="nav-item">
+      <a href="./basket.html" class="nav-item ">
         <svg
           width="21"
           height="22"
@@ -156,9 +159,9 @@
           />
         </svg>
 
-        <div>Корзина</div>
+        <div class="active">Корзина</div>
       </a>
-      <div class="nav-item">
+      <a href="./order.html" class="nav-item active">
         <svg
           width="25"
           height="24"
@@ -174,30 +177,10 @@
           />
         </svg>
 
-        <div>Заказы</div>
-      </div>
+        <div>Профиль</div>
+      </ф>
     </div>
-    <div class="productPopUp">
-      <div>
-        <img src="./img/svg/cellIcon.svg" alt="" />
-        <h4>Товар добавлен в корзину</h4>
-        <button>Продолжить</button>
-      </div>
-    </div>
-    <script src="./splide-4.1.3/dist/js/splide.min.js"></script>
-    <script type="module" src="./main.js"></script>
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        new Splide("#productSlider", {
-          type: "loop",
-          autoplay: true,
-          interval: 3000,
-          pauseOnHover: false,
-          pauseOnFocus: false,
-          pagination: true,
-          arrows: false,
-        }).mount();
-      });
-    </script>
+    <script src="./main.js" type="module"></script>
+    <script src="./orderDetails.js" type="module"></script>
   </body>
 </html>
