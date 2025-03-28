@@ -1,0 +1,34 @@
+[
+  {
+    "id": 1,
+    "title": "Портативная колонка Marshall SL-665",
+    "img": "./img/png/column.png",
+    "price": 3000000,
+    "statusClass": "top",
+    "statusText": "ТОП"
+  },
+  {
+    "id": 2,
+    "title": "Пылесос Samsung Waterproof SM-250 серый",
+    "img": "./img/png/orderImg.png",
+    "price": 1840000,
+    "statusClass": "new",
+    "statusText": "NEW"
+  },
+  {
+    "id": 3,
+    "title": "Ноутбук Mackbook Air Pro M3 серый",
+    "img": "./img/png/macbook1.jpg",
+    "price": 12000000,
+    "statusClass": "sale",
+    "statusText": "15%"
+  },
+  {
+    "id": 4,
+    "title": "Микроволновая печь Artel Белый",
+    "img": "./img/png/microwave.png",
+    "price": 6440000,
+    "statusClass": "",
+    "statusText": ""
+  }
+]

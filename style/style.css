@@ -263,6 +263,16 @@ header h2 {
   border-radius: 8px;
   padding: calc(2.1vw - 0.25px);
   position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.goodsCards .card img {
+  width: calc(10.6vw + 238.7px);
+  height: calc(23.8vw + 77px);
+  max-width: 320px;
+  max-height: 26 0px;
+  border-radius: 8px;
 }
 .goodsCards .card .badge {
   position: absolute;
@@ -270,7 +280,6 @@ header h2 {
   padding: 6px 8px;
   color: white;
   top: calc(5.3vw - 0.63px);
-  z-index: 1;
   font-size: 12px;
   text-transform: uppercase;
 }
@@ -302,7 +311,7 @@ header h2 {
   justify-content: space-between;
   gap: 0 8px;
 }
-.cardBtns a {
+.cardBtns button {
   width: 50%;
   background-color: #36393d;
   border: none;
@@ -313,7 +322,7 @@ header h2 {
   cursor: pointer;
   font-size: 16px;
 }
-.cardBtns a:first-child {
+.cardBtns button:first-child {
   background-color: #0077ff;
   color: #fff;
 }
@@ -750,11 +759,25 @@ header h2 {
   padding-top: 0;
   border-top: 0;
 }
+.basketEmptyWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: center;
+}
+.basketEmptyWrapper h5,
+.basketEmptyWrapper p {
+  text-align: center;
+}
+.basketEmptyWrapper h5 {
+  font-size: 17;
+}
 #basketProductImg {
   width: calc(19.8vw - 2.4px);
   height: calc(19.8vw - 2.4px);
   max-width: 150px;
   max-height: 150px;
+  border-radius: 8px;
 }
 .basketCard .basketDesc {
   flex-grow: 100;
@@ -791,13 +814,13 @@ header h2 {
   background-repeat: no-repeat;
   background-size: cover;
   border: none;
-  background-image: url(./img/svg/Plus.svg);
+  background-image: url(../img/svg/Plus.svg);
   border-radius: 50%;
   font-size: 20px;
   cursor: pointer;
 }
 .countBtns button:first-child {
-  background-image: url(./img/svg/Minus.svg);
+  background-image: url(../img/svg/Minus.svg);
 }
 #basketProductDelete {
   display: flex;
@@ -1106,7 +1129,7 @@ header h2 {
 }
 
 @media (max-width: 420px) {
-  .cardBtns a {
+  .cardBtns button {
     font-size: 14px;
   }
 }

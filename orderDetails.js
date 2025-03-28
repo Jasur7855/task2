@@ -2,7 +2,6 @@ import { orderData } from "./store/orderData.js";
 
 // Элементы
 const headerTitle = document.querySelector(".header-top h2");
-const mainOrderDetail = document.querySelector(".mainOrderDetail");
 const btnsContainer = document.querySelector(".btns"); // Добавил проверку перед изменением
 
 // Получаем id из URL и приводим к числу
@@ -21,8 +20,8 @@ if (!orderDetailCard) {
 
   const imgSrc =
     orderDetailCard.status === "new" || orderDetailCard.status === "cancel"
-      ? "./img/svg/orderInfo.svg"
-      : "./img/svg/orderSuccses.svg";
+      ? "../img/svg/orderInfo.svg"
+      : "../img/svg/orderSuccses.svg";
 
   renderOrderDetailCard(orderDetailCard, imgSrc);
 
