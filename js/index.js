@@ -34,7 +34,7 @@ async function addGoodsCard(elem) {
     }
     const data = await response.json();
     data.forEach((e) => {
-      elem.innerHTML += `<a href="../pages/productCard.html" class="card">
+      elem.innerHTML += `<a href="./pages/productCard.html" class="card">
         <div>
         <div class="badge ${e.statusClass}">${e.statusText}</div>
         <img src=${e.img} alt="" />
